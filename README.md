@@ -3,3 +3,5 @@
 Forked from [Synthetix's Spartan Council NFT](https://github.com/Synthetixio/spartan-council)
 
 Read more here [SIP 93: Supersede SIP-90 to Delegated Council Governance](https://sips.synthetix.io/sips/sip-93)
+
+Deployed [here](https://etherscan.io/address/0xaebd9bd588f044cbdec8f3cf1e80277a7a52dc69)
