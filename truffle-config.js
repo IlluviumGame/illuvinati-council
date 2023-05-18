@@ -1,4 +1,5 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
+
 require('dotenv').config();
 
 /**
@@ -39,32 +40,40 @@ module.exports = {
 	 */
 
 	networks: {
-		ropsten: {
-			provider: () => {
-				return new HDWalletProvider(
-					process.env['MNEMONIC'],
-					`https://ropsten.infura.io/v3/${process.env['INFURA_API']}`
-				);
-			},
-			network_id: 3,
+		goerli: {
+			provider: () => (
+				new HDWalletProvider({
+					providerOrUrl: `https://goerli.infura.io/v3/${process.env['INFURA_API']}`,
+					privateKeys: [process.env['PRIVATE_KEY']],
+				})
+			),
+			network_id: 5,
+			gasPrice: 50_000_000_000,
 		},
-		kovan: {
-			provider: () => {
-				return new HDWalletProvider(
-					process.env['MNEMONIC'],
-					`https://kovan.infura.io/v3/${process.env['INFURA_API']}`
-				);
-			},
-			network_id: 42,
+		mainnet: {
+			provider: () => (
+				new HDWalletProvider({
+					providerOrUrl: `https://mainnet.infura.io/v3/${process.env['INFURA_API']}`,
+					privateKeys: [process.env['PRIVATE_KEY']],
+				})
+			),
+			confirmations: 0,
+			network_id: 1,
+			timeoutBlocks: 500,
+			skipDryRun: false,
+			// gasPrice: 50_000_000_000,
 		},
-		rinkeby: {
-			provider: () => {
-				return new HDWalletProvider(
-					process.env['MNEMONIC'],
-					`https://rinkeby.infura.io/v3/${process.env['INFURA_API']}`
-				);
-			},
-			network_id: 4,
+		polygon: {
+			provider: () => (
+				new HDWalletProvider({
+					providerOrUrl: 'https://polygon-rpc.com/',
+					privateKeys: [process.env['PRIVATE_KEY']],
+				})
+			),
+			network_id: 137,
+			confirmations: 2,
+			timeoutBlocks: 200,
+			// gasPrice: 200_000_000_000,
 		},
 		// Useful for testing. The `development` name is special - truffle uses it by default
 		// if it's defined here and no other network is specified at the command line.
@@ -125,6 +134,6 @@ module.exports = {
 	},
 	plugins: ['solidity-coverage', 'truffle-plugin-verify', 'truffle-plugin-solhint'],
 	api_keys: {
-		etherscan: process.env['ETHERSCAN_API'],
+		etherscan: process.env['ETHERSCAN_KEY'],
 	},
 };

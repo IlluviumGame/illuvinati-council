@@ -1,5 +1,5 @@
 {
-	"name": "spartancouncil",
+	"name": "illuvinati-council",
 	"version": "1.0.0",
 	"license": "MIT",
 	"author": "andytcf",
@@ -7,7 +7,7 @@
 	"scripts": {
 		"coverage": "truffle run coverage",
 		"test": "truffle test",
-		"dist": "truffle-flattener ./contracts/SpartanCouncil.sol > SpartanCouncil.full.sol && solcjs --bin --abi --optimize SpartanCouncil.full.sol && mv SpartanCouncil_full_sol_SpartanCouncil.bin SpartanCouncil.full.bin && mv SpartanCouncil_full_sol_SpartanCouncil.abi SpartanCouncil.full.abi && rm *_sol_*",
+		"dist": "truffle-flattener ./contracts/IlluvinatiCouncil.sol > IlluvinatiCouncil.full.sol && solcjs --bin --abi --optimize IlluvinatiCouncil.full.sol && mv IlluvinatiCouncil_full_sol_IlluvinatiCouncil.bin IlluvinatiCouncil.full.bin && mv IlluvinatiCouncil_full_sol_IlluvinatiCouncil.abi IlluvinatiCouncil.full.abi && rm *_sol_*",
 		"format": "prettier --write \"contracts/**/*.sol\" \"**/*.js\" \"**/*.md\" \"**/*.yml\"",
 		"lint": "solhint \"contracts/*.sol\" && eslint \"**/*.js\""
 	},
