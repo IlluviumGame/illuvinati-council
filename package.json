@@ -23,7 +23,7 @@
 	"dependencies": {
 		"@truffle/hdwallet-provider": "1.2.0",
 		"openzeppelin-solidity-2.3.0": "npm:openzeppelin-solidity@2.3.0",
-		"truffle": "5.1.54",
+		"truffle": "5.11.5",
 		"truffle-plugin-solhint": "0.0.6",
 		"truffle-plugin-verify": "0.5.0"
 	}
